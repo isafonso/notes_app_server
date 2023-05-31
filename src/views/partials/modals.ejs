@@ -1,0 +1,65 @@
+<!-- Modal para cadastrar -->
+<div
+  class="modal fade"
+  id="ModalCreateNote"
+  tabindex="-1"
+  aria-labelledby="modalCreateNote"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3 mx-5" id="modalCreateNote">
+          Crie sua anotação
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form action="/criar-anotacao" method="post">
+          <div class="mb-4">
+            <label for="title" class="form-label h4 text-dark"
+              >Título da anotação</label
+            >
+            <input
+              required
+              type="text"
+              class="form-control"
+              name="title"
+              id="title"
+              placeholder="Coloque aqui o título da anotação que pretende cadastrar"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="content" class="form-label h4 text-dark"
+              >Conteúdo da anotação</label
+            >
+            <textarea
+              class="form-control"
+              name="content"
+              id="content"
+              rows="3"
+              placeholder="Conteúdo da anotação aqui"
+            ></textarea>
+          </div>
+          <div>
+            <input
+              class="btn btn-primary form-control"
+              type="submit"
+              value="Criar anotação"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

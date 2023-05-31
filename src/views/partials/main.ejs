@@ -1,0 +1,42 @@
+<main class="row m-auto">
+  <div class="col-12 col-md-6 offset-md-3 mt-5 text-center">
+    <span class="display-6 py-5">Gerencie suas anotações</span>
+    <% if(viewData){ %>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark text-center">
+          <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Conteúdo</th>
+            <th>Gerir</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <% viewData.forEach( dt => { %>
+          <tr>
+            <td><%= dt.id %></td>
+            <td><%= dt.title %></td>
+            <td><%= dt.content %></td>
+            <td class="d-flex py-3">
+              <a
+                href="/editar-anotacao/<%= dt.id %>"
+                class="btn btn-success mx-2"
+                >Editar</a
+              >
+              <a
+                href="/deletar-anotacao/<%= dt.id %>"
+                class="btn btn-danger mx-2"
+                >Deletar</a
+              >
+            </td>
+          </tr>
+          <% } ) %>
+        </tbody>
+      </table>
+    </div>
+    <% }else{ %>
+    <span class="display-4">Ainda não há anotações cadastradas no seu App</span>
+    <% } %>
+  </div>
+</main>

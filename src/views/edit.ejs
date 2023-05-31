@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Notes App" />
+    <meta name="description" content="Crie e gerencie anotações" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="shortcut icon" href="" type="image/jpg" />
+    <title>Notes App</title>
+  </head>
+  <body class="bg-light">
+    <div class="container-fluid">
+      <div class="row mt-3">
+        <div class="col-12 col-md-2 mb-4 m-auto">
+          <button class="btn bg-dark text-white btnChange" onclick="changeBG()">
+            Dark / Light Mode
+          </button>
+        </div>
+        <div class="col-12 col-md-6 offset-md-1 mb-4 m-auto">
+          <span class="display-6">Edite aqui as suas anotações</span>
+        </div>
+        <div class="col-12 col-md-2 m-auto text-center">
+          <a href="/" class="btn btn-primary">Voltar</a>
+        </div>
+      </div>
+      <form
+        action="/editar-anotacao/<%= viewData.id %>"
+        method="post"
+        class="row my-5 m-auto"
+      >
+        <div class="col-12 col-md-6 offset-md-3 mb-4">
+          <label for="title" class="form-label h4 text-dark"
+            >Título da anotação</label
+          >
+          <input
+            value="<%= viewData.title %>"
+            type="text"
+            class="form-control"
+            name="title"
+            id="title"
+            placeholder="Coloque aqui o nome do producto que pretende cadastrar"
+          />
+        </div>
+        <div class="col-12 col-md-6 offset-md-3 mb-4">
+          <label for="content" class="form-label h4 text-dark"
+            >Conteúdo da anotação</label
+          >
+          <textarea
+            value="<%= viewData.content %>"
+            class="form-control"
+            name="content"
+            id="content"
+            rows="3"
+          >
+<%= viewData.content %></textarea
+          >
+        </div>
+        <div class="col-12 col-md-6 offset-md-3">
+          <button class="btn btn-primary" type="submit">
+            Actualizar Anotação
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>

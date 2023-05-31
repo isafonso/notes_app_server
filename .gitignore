@@ -1,0 +1,8 @@
+# Files && and Folders to be ignored by github
+
+# DotEnv Files
+/*.env.*
+
+# Node Modules
+/node_modules
+
